@@ -2,21 +2,19 @@ import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-// Create a single axios instance outside the component
 export const api = axios.create({
-  baseURL: 'http://localhost:5000/api/v1',
+  baseURL: 'https://nine0-s-blog-api.onrender.com/api/v1',
   headers: {
     'Content-Type': 'application/json',
   },
+  withCredentials: true,
 });
 
-// Set token if it exists in localStorage
 const token = localStorage.getItem("token");
 if (token) {
   api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 }
 
-// Define types based on your backend user model
 interface User {
   firstname: string;
   lastname: string;
