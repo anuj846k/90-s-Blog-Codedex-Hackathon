@@ -57,7 +57,7 @@ export function BlogPosts() {
   }
 
   if (loading) {
-    return <div className="text-green-400">Loading...</div>
+    return <div className="text-green-400">Loading... Pls wait as the server is loading it may take 30s </div>
   }
 
   return (
