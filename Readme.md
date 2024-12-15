@@ -2,8 +2,7 @@
 Welcome to our innovative reinterpretation of the Dev.to network with a 1990s look and feel. 
 This project combines vintage web design with modern web features for a fun and functional experience.
 
-![Uploading image.png…]()
-
+![image](https://github.com/user-attachments/assets/fdbe299d-fd7a-4b7e-9ff0-98a40ab49011)
 
 Youtube Video Link - https://youtu.be/L50nWpqZtu4
 
