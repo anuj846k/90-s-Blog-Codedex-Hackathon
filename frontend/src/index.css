@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-green: #39ff14;
+  --neon-pink: #ff6ec7;
+  --neon-blue: #00ffff;
+  --neon-yellow: #ffff00;
+  --neon-orange: #ff9933;
+  --neon-purple: #9d00ff;
+  --neon-red: #ff0000;
+  --neon-cyan: #00ffff;
+}
+
+body {
+  font-family: 'VT323', monospace;
+  color: var(--neon-green);
+  background: black;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-cyan);
+}
+
+@layer utilities {
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-border-pulse {
+    animation: borderPulse 2s infinite;
+  }
+
+  .animate-wave {
+    animation: wave 3s ease-in-out infinite;
+  }
+
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  .animate-flicker {
+    animation: flicker 0.5s step-end infinite;
+  }
+
+  .animate-color-cycle {
+    animation: colorCycle 5s linear infinite;
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  .pixelated {
+    image-rendering: pixelated;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    border-color: var(--neon-yellow);
+  }
+  50% {
+    border-color: var(--neon-pink);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    clip-path: polygon(0% 50%, 16% 45%, 33% 50%, 50% 60%, 66% 65%, 83% 60%, 100% 50%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 60%, 16% 65%, 33% 60%, 50% 50%, 66% 45%, 83% 50%, 100% 60%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes colorCycle {
+  0% { color: var(--neon-green); }
+  33% { color: var(--neon-pink); }
+  66% { color: var(--neon-blue); }
+  100% { color: var(--neon-green); }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+

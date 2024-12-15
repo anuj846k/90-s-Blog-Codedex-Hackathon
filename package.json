@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "axios": "^1.7.9",
+    "react-hot-toast": "^2.4.1"
+  },
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "start": "cd backend && npm install && npm start"
+  }
+}
