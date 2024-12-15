@@ -3,6 +3,7 @@ export interface Post {
   title: string;
   content: string;
   date: string;
+  tags: string[];
   image: string;
   authorMetadata: {
     name: string;

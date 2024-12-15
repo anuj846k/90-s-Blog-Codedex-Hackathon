@@ -31,7 +31,7 @@ export function NavBar() {
 
   const authNavItems = user
     ? [
-        { href: "/create", label: "Publish Blog" },
+        { href: "/publish-post", label: "Publish Blog" },
         { href: "/all-blogs", label: "Blogs" },
 
       ]

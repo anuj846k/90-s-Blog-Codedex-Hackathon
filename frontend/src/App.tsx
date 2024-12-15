@@ -11,6 +11,7 @@ import {PostPage} from "./pages/PostPage";
 import SamplePage from "./pages/SamplePostPage";
 
 import { BlogPosts } from "./pages/All-blogs";
+import PublishPosts from './pages/PublishPosts';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -27,6 +28,7 @@ const App: React.FC = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/publish-post" element={<PublishPosts />} />
             <Route path="/post/:id" element={<PostPage />} />
             <Route path="/all-blogs" element={<BlogPosts />} />
             <Route path="/sample-post/:id" element={<SamplePage/>} />

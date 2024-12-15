@@ -92,12 +92,49 @@ export function BlogPosts() {
                   <h2 className="text-xl font-semibold text-neon-green mb-2 group-hover:text-green-400 transition-colors">
                     {post.title}
                   </h2>
+                  
+                  {/* Tags Section */}
+                  {post.tags && post.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {post.tags.map((tag: string, index: number) => (
+                        <span
+                          key={index}
+                          className="inline-flex items-center px-2 py-1 text-xs 
+                                   bg-neon-green/10 text-neon-green border border-neon-green/30 
+                                   rounded-md font-['VT323'] tracking-wider
+                                   group-hover:border-neon-green/50 group-hover:shadow-[0_0_5px_rgba(57,255,20,0.3)]
+                                   transition-all duration-300"
+                        >
+                          <span className="mr-1">
+                            {tag === 'coding' && '⌨️'}
+                            {tag === 'tech' && '🖥️'}
+                            {tag === 'retro' && '👾'}
+                            {tag === 'gaming' && '🎮'}
+                            {tag === 'web' && '🌐'}
+                            {tag === 'design' && '🎨'}
+                            {tag === 'tutorial' && '📚'}
+                            {tag === 'news' && '📰'}
+                          </span>
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  
                   <p className="text-gray-300 text-sm mb-4 line-clamp-3 flex-grow">
                     {post.content}
                   </p>
-                  <div className="flex justify-between items-center text-sm text-gray-400 mt-auto">
-                    <span>{new Date(post.createdAt).toLocaleDateString()}</span>
-                    <span className="text-neon-green group-hover:text-green-400">Read more →</span>
+                  
+                  <div className="flex flex-wrap justify-between items-center text-sm text-gray-400 mt-auto pt-3 border-t border-neon-green/20">
+                    <span className="text-neon-purple">
+                      {new Date(post.createdAt).toLocaleDateString()}
+                    </span>
+                    <span className="text-neon-green group-hover:text-green-400 flex items-center">
+                      Read more 
+                      <span className="ml-1 group-hover:translate-x-1 transition-transform duration-300">
+                        →
+                      </span>
+                    </span>
                   </div>
                 </div>
               </div>
