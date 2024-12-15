@@ -8,6 +8,7 @@ const AppError = require("./utils/appError");
 const globalErrorHandler = require("./controllers/errorController");
 const cors = require("cors");
 const helmet = require("helmet");
+const PORT = process.env.PORT || 5000;
 
 const DB = process.env.MONGO_URI;
 
@@ -56,6 +57,6 @@ mongoose
     console.log(`Error while connecting to database: ${err}`);
   });
 
-app.listen(5000, () => {
-  console.log("Server is running on port 5000");
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
