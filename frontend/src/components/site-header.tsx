@@ -48,7 +48,7 @@ export function SiteHeader() {
         height={128}
         className="absolute inset-0 w-full h-full"
       />
-      <h1 className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-neon-green animate-pulse" style={{
+      <h1 className="absolute inset-0 font-['VT323'] flex items-center justify-center text-8xl font-bold text-neon-green animate-pulse" style={{
         textShadow: '0 0 10px rgba(57, 255, 20, 0.8), 0 0 20px rgba(57, 255, 20, 0.8), 0 0 30px rgba(57, 255, 20, 0.8)'
       }}>
         90's Blogs
