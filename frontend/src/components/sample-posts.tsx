@@ -85,7 +85,7 @@ export default function SamplePosts() {
 
   return (
     <section className="bg-transparent text-green-400 p-4 font-['VT323'] tracking-wider">
-      <div className="flex space-x-2 mb-4">
+      <div className="flex flex-col md:flex-row space-x-2 mb-4">
         <img src="n3.gif" alt="" className="pixelated" />
         <img src="n2.gif" alt="" className="pixelated" />
       </div>

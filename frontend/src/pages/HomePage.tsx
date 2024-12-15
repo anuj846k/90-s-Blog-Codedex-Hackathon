@@ -9,7 +9,7 @@ import SamplePosts from "@/components/sample-posts";
 function HomePage() {
   return (
     <main className="min-h-screen max-w-6xl mx-auto p-4 space-y-4">
-      <div className="flex justify-center items-center space-x-4 mb-4">
+      <div className="flex  flex-col md:flex-row justify-center items-center space-x-4 mb-4">
         <img src="n1.gif" alt=""/>
         <img src="t2.gif" alt="" />
         <img src="t3.gif" alt="" />
