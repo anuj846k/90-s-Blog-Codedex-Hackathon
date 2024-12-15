@@ -10,6 +10,10 @@ Live Link - https://90-s-blog-codedex-hackathon.vercel.app/
 
 Github repo - https://github.com/anuj846k/90-s-Blog-Codedex-Hackathon
 
+![image](https://github.com/user-attachments/assets/ec9b8e9b-3a07-481f-ae80-c82c75bcc115)
+
+![image](https://github.com/user-attachments/assets/6c5cf990-3efe-470c-adf8-6a232b820543)
+
 Features
 1990s Vibe
 
