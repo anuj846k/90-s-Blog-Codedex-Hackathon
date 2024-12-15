@@ -19,7 +19,7 @@ app.use(
     origin: [
       process.env.FRONTEND_URL,
       "http://localhost:5173",
-      "https://90-s-blog-codedex-hackathon.vercel.app/",
+      "https://90-s-blog-codedex-hackathon.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
