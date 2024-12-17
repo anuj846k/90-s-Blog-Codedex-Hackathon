@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { Link } from "react-router-dom"
 import {
@@ -94,38 +93,50 @@ export default function SamplePosts() {
         <Link 
           to={`/sample-post/${post.id}`} 
           key={post.id}
-          className="block mb-4 group"
+          className="block mb-6 group transform transition-all duration-300 hover:scale-102 hover:-translate-y-1"
         >
-          <article 
-            className="
-              border-2 border-green-600 
-              bg-black 
-              transition-all 
-              duration-300 
-              hover:border-green-400 
-              hover:shadow-[0_0_10px_rgba(0,255,0,0.7)]
-              cursor-pointer
-            "
-          >
-            <header className="p-3 flex items-center space-x-4 border-b-2 border-green-600">
-              <div className="w-16 h-16 relative overflow-hidden rounded-sm border-2 border-green-600">
+          <article className="
+            relative
+            border-2 border-neon-green 
+            bg-black/80 
+            rounded-lg
+            overflow-hidden
+            transition-all 
+            duration-300 
+            hover:border-neon-blue
+            hover:shadow-[0_0_20px_rgba(0,255,255,0.3)]
+            before:content-['']
+            before:absolute
+            before:inset-0
+            before:bg-gradient-to-r
+            before:from-transparent
+            before:via-neon-green/5
+            before:to-transparent
+            before:translate-x-[-200%]
+            hover:before:translate-x-[200%]
+            before:transition-transform
+            before:duration-1000
+          ">
+            <header className="p-4 flex items-center space-x-4 border-b border-neon-green/30">
+              <div className="w-20 h-20 relative overflow-hidden rounded-lg border-2 border-neon-green/50">
                 <img
                   src={post.img}
                   alt={`${post.title} thumbnail`}
-                  className="pixelated w-full h-full object-cover"
+                  className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               <div>
-                <h2 className="text-green-400 font-bold text-xl uppercase tracking-widest">
+                <h2 className="text-neon-green font-bold text-2xl uppercase tracking-wider group-hover:text-neon-blue transition-colors">
                   {post.title}
                 </h2>
-                <time className="text-sm text-green-600">
+                <time className="text-sm text-neon-pink">
                   {post.date}
                 </time>
               </div>
             </header>
-            <div className="p-4 text-green-300 text-lg">
-              <p className="typing-effect">
+            <div className="p-4">
+              <p className="text-green-300 text-lg leading-relaxed line-clamp-3">
                 {post.content}
               </p>
             </div>

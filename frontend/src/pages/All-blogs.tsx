@@ -11,6 +11,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination"
 import { NavBar } from '@/components/nav-bar';
+import { RetroLoading } from '../components/RetroLoading';
 
 export function BlogPosts() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -57,7 +58,11 @@ export function BlogPosts() {
   }
 
   if (loading) {
-    return <div className="text-green-400">Loading... Pls wait as the server is loading it may take 30s </div>
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <RetroLoading />
+      </div>
+    );
   }
 
   return (

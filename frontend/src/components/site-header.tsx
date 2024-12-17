@@ -17,13 +17,23 @@ export function SiteHeader() {
       ctx.fillStyle = '#000'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
       
-      for (let i = 0; i < 5; i++) {
+      // Create multiple wave layers with different colors
+      const colors = [
+        'rgba(57, 255, 20, 0.3)',  // neon green
+        'rgba(255, 110, 199, 0.2)', // neon pink
+        'rgba(0, 255, 255, 0.2)'    // neon cyan
+      ]
+      
+      colors.forEach((color, i) => {
         ctx.beginPath()
-        ctx.strokeStyle = `rgba(57, 255, 20, ${0.2 + i * 0.1})`
-        ctx.lineWidth = 2
+        ctx.strokeStyle = color
+        ctx.lineWidth = 3
         
         for (let x = 0; x < canvas.width; x++) {
-          const y = Math.sin(x * 0.02 + offset + i) * 10 + 50
+          const frequency = 0.02
+          const amplitude = 15
+          const y = Math.sin(x * frequency + offset + (i * Math.PI / 4)) * amplitude + 50
+          
           if (x === 0) {
             ctx.moveTo(x, y)
           } else {
@@ -31,7 +41,7 @@ export function SiteHeader() {
           }
         }
         ctx.stroke()
-      }
+      })
       
       offset += 0.05
       requestAnimationFrame(animate)
@@ -41,18 +51,26 @@ export function SiteHeader() {
   }, [])
 
   return (
-    <header className="relative w-full h-32 bg-black">
+    <header className="relative w-full h-40 bg-black/90 border-4 border-neon-green rounded-lg overflow-hidden">
       <canvas 
         ref={canvasRef}
         width={1200}
-        height={128}
+        height={160}
         className="absolute inset-0 w-full h-full"
       />
-      <h1 className="absolute inset-0 font-['VT323'] flex items-center justify-center text-8xl font-bold text-neon-green animate-pulse" style={{
-        textShadow: '0 0 10px rgba(57, 255, 20, 0.8), 0 0 20px rgba(57, 255, 20, 0.8), 0 0 30px rgba(57, 255, 20, 0.8)'
-      }}>
-        90's Blogs
-      </h1>
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <h1 className="font-['VT323'] text-5xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-green via-neon-blue to-neon-pink animate-pulse">
+          90's Blogs
+        </h1>
+        <div className="flex gap-2 mt-2">
+          <span className="px-2 py-1 bg-black/50 text-neon-yellow border border-neon-yellow text-sm animate-blink">
+            ONLINE
+          </span>
+          <span className="px-2 py-1 bg-black/50 text-neon-green border border-neon-green text-sm">
+            EST. 2024
+          </span>
+        </div>
+      </div>
     </header>
   )
 }
