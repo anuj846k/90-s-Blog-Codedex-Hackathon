@@ -58,7 +58,7 @@ export function SiteHeader() {
         height={160}
         className="absolute inset-0 w-full h-full"
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
+      <div className="absolute font-['VT323']  inset-0 flex flex-col items-center justify-center">
         <h1 className="font-['VT323'] text-5xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-green via-neon-blue to-neon-pink animate-pulse">
           90's Blogs
         </h1>
